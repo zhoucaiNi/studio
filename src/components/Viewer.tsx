@@ -28,7 +28,16 @@ export function Viewer({ collection, photo, gridOpen, onNext, onOpen }: Props) {
   }
   return (
     <button type="button" className="stage" aria-label="Next photo" onClick={onNext}>
-      <img key={photo.full} className="photo" src={photo.full} alt={photo.alt} width={photo.width} height={photo.height} />
+      <img
+        key={photo.full}
+        className="photo"
+        src={photo.full}
+        srcSet={`${photo.full} ${photo.width}w, ${photo.large} ${photo.largeWidth}w`}
+        sizes="(max-width: 760px) calc(100vw - 32px), calc(100vw - 304px)"
+        alt={photo.alt}
+        width={photo.width}
+        height={photo.height}
+      />
     </button>
   )
 }

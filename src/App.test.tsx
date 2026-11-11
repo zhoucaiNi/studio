@@ -39,3 +39,10 @@ test('thumbnails open the chosen photo and close', async () => {
   expect(screen.queryByRole('button', { name: 'Open photo 01' })).not.toBeInTheDocument()
   expect(screen.getByRole('button', { name: 'show thumbnails' })).toBeInTheDocument()
 })
+
+test('the photo offers the large file to high-density screens', () => {
+  render(<App collections={fixture} />)
+  const img = screen.getByRole('img', { name: 'a photo 1' })
+  expect(img).toHaveAttribute('srcset', '/photos/a/01-full.jpg 2000w, /photos/a/01-large.jpg 3200w')
+  expect(img.getAttribute('sizes')).toBeTruthy()
+})

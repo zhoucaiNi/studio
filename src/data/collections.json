@@ -4,6 +4,8 @@
     "name": "Open Country",
     "photos": [
       {
+        "large": "/photos/open-country/01-large.jpg",
+        "largeWidth": 3200,
         "full": "/photos/open-country/01-full.jpg",
         "thumb": "/photos/open-country/01-thumb.jpg",
         "width": 2000,
@@ -12,6 +14,8 @@
         "caption": "2024"
       },
       {
+        "large": "/photos/open-country/02-large.jpg",
+        "largeWidth": 3200,
         "full": "/photos/open-country/02-full.jpg",
         "thumb": "/photos/open-country/02-thumb.jpg",
         "width": 2000,
@@ -20,6 +24,8 @@
         "caption": "2024"
       },
       {
+        "large": "/photos/open-country/03-large.jpg",
+        "largeWidth": 3200,
         "full": "/photos/open-country/03-full.jpg",
         "thumb": "/photos/open-country/03-thumb.jpg",
         "width": 2000,
@@ -28,6 +34,8 @@
         "caption": "2024"
       },
       {
+        "large": "/photos/open-country/04-large.jpg",
+        "largeWidth": 3200,
         "full": "/photos/open-country/04-full.jpg",
         "thumb": "/photos/open-country/04-thumb.jpg",
         "width": 2000,
@@ -36,6 +44,8 @@
         "caption": "2024"
       },
       {
+        "large": "/photos/open-country/05-large.jpg",
+        "largeWidth": 3200,
         "full": "/photos/open-country/05-full.jpg",
         "thumb": "/photos/open-country/05-thumb.jpg",
         "width": 2000,
@@ -44,6 +54,8 @@
         "caption": "2024"
       },
       {
+        "large": "/photos/open-country/06-large.jpg",
+        "largeWidth": 3200,
         "full": "/photos/open-country/06-full.jpg",
         "thumb": "/photos/open-country/06-thumb.jpg",
         "width": 2000,
@@ -52,6 +64,8 @@
         "caption": "2024"
       },
       {
+        "large": "/photos/open-country/07-large.jpg",
+        "largeWidth": 3200,
         "full": "/photos/open-country/07-full.jpg",
         "thumb": "/photos/open-country/07-thumb.jpg",
         "width": 2000,
@@ -66,6 +80,8 @@
     "name": "Dusk",
     "photos": [
       {
+        "large": "/photos/dusk/01-large.jpg",
+        "largeWidth": 3200,
         "full": "/photos/dusk/01-full.jpg",
         "thumb": "/photos/dusk/01-thumb.jpg",
         "width": 2000,
@@ -74,6 +90,8 @@
         "caption": "2024"
       },
       {
+        "large": "/photos/dusk/02-large.jpg",
+        "largeWidth": 1280,
         "full": "/photos/dusk/02-full.jpg",
         "thumb": "/photos/dusk/02-thumb.jpg",
         "width": 1280,
@@ -82,6 +100,8 @@
         "caption": "2024"
       },
       {
+        "large": "/photos/dusk/03-large.jpg",
+        "largeWidth": 3200,
         "full": "/photos/dusk/03-full.jpg",
         "thumb": "/photos/dusk/03-thumb.jpg",
         "width": 2000,
@@ -90,6 +110,8 @@
         "caption": "2024"
       },
       {
+        "large": "/photos/dusk/04-large.jpg",
+        "largeWidth": 3200,
         "full": "/photos/dusk/04-full.jpg",
         "thumb": "/photos/dusk/04-thumb.jpg",
         "width": 2000,
@@ -104,6 +126,8 @@
     "name": "San Francisco",
     "photos": [
       {
+        "large": "/photos/san-francisco/01-large.jpg",
+        "largeWidth": 3200,
         "full": "/photos/san-francisco/01-full.jpg",
         "thumb": "/photos/san-francisco/01-thumb.jpg",
         "width": 2000,
@@ -112,6 +136,8 @@
         "caption": "San Francisco"
       },
       {
+        "large": "/photos/san-francisco/02-large.jpg",
+        "largeWidth": 3200,
         "full": "/photos/san-francisco/02-full.jpg",
         "thumb": "/photos/san-francisco/02-thumb.jpg",
         "width": 2000,
@@ -120,6 +146,8 @@
         "caption": "San Francisco"
       },
       {
+        "large": "/photos/san-francisco/03-large.jpg",
+        "largeWidth": 3200,
         "full": "/photos/san-francisco/03-full.jpg",
         "thumb": "/photos/san-francisco/03-thumb.jpg",
         "width": 2000,
@@ -128,6 +156,8 @@
         "caption": "San Francisco"
       },
       {
+        "large": "/photos/san-francisco/04-large.jpg",
+        "largeWidth": 3200,
         "full": "/photos/san-francisco/04-full.jpg",
         "thumb": "/photos/san-francisco/04-thumb.jpg",
         "width": 2000,
@@ -136,6 +166,8 @@
         "caption": "San Francisco"
       },
       {
+        "large": "/photos/san-francisco/05-large.jpg",
+        "largeWidth": 3200,
         "full": "/photos/san-francisco/05-full.jpg",
         "thumb": "/photos/san-francisco/05-thumb.jpg",
         "width": 2000,
@@ -150,6 +182,8 @@
     "name": "Shoe Rotations",
     "photos": [
       {
+        "large": "/photos/shoe-rotations/01-large.jpg",
+        "largeWidth": 3200,
         "full": "/photos/shoe-rotations/01-full.jpg",
         "thumb": "/photos/shoe-rotations/01-thumb.jpg",
         "width": 2000,
@@ -158,6 +192,8 @@
         "caption": "Ongoing"
       },
       {
+        "large": "/photos/shoe-rotations/02-large.jpg",
+        "largeWidth": 3200,
         "full": "/photos/shoe-rotations/02-full.jpg",
         "thumb": "/photos/shoe-rotations/02-thumb.jpg",
         "width": 2000,
@@ -166,6 +202,8 @@
         "caption": "Ongoing"
       },
       {
+        "large": "/photos/shoe-rotations/03-large.jpg",
+        "largeWidth": 3200,
         "full": "/photos/shoe-rotations/03-full.jpg",
         "thumb": "/photos/shoe-rotations/03-thumb.jpg",
         "width": 2000,
@@ -174,6 +212,8 @@
         "caption": "Ongoing"
       },
       {
+        "large": "/photos/shoe-rotations/04-large.jpg",
+        "largeWidth": 3200,
         "full": "/photos/shoe-rotations/04-full.jpg",
         "thumb": "/photos/shoe-rotations/04-thumb.jpg",
         "width": 2000,
@@ -182,6 +222,8 @@
         "caption": "Ongoing"
       },
       {
+        "large": "/photos/shoe-rotations/05-large.jpg",
+        "largeWidth": 3200,
         "full": "/photos/shoe-rotations/05-full.jpg",
         "thumb": "/photos/shoe-rotations/05-thumb.jpg",
         "width": 2000,
@@ -190,6 +232,8 @@
         "caption": "Ongoing"
       },
       {
+        "large": "/photos/shoe-rotations/06-large.jpg",
+        "largeWidth": 3200,
         "full": "/photos/shoe-rotations/06-full.jpg",
         "thumb": "/photos/shoe-rotations/06-thumb.jpg",
         "width": 2000,
@@ -204,6 +248,8 @@
     "name": "Fall",
     "photos": [
       {
+        "large": "/photos/fall/01-large.jpg",
+        "largeWidth": 3200,
         "full": "/photos/fall/01-full.jpg",
         "thumb": "/photos/fall/01-thumb.jpg",
         "width": 2000,
@@ -212,6 +258,8 @@
         "caption": "Fall"
       },
       {
+        "large": "/photos/fall/02-large.jpg",
+        "largeWidth": 3200,
         "full": "/photos/fall/02-full.jpg",
         "thumb": "/photos/fall/02-thumb.jpg",
         "width": 2000,
@@ -220,6 +268,8 @@
         "caption": "Fall"
       },
       {
+        "large": "/photos/fall/03-large.jpg",
+        "largeWidth": 3200,
         "full": "/photos/fall/03-full.jpg",
         "thumb": "/photos/fall/03-thumb.jpg",
         "width": 2000,
@@ -228,6 +278,8 @@
         "caption": "Fall"
       },
       {
+        "large": "/photos/fall/04-large.jpg",
+        "largeWidth": 3200,
         "full": "/photos/fall/04-full.jpg",
         "thumb": "/photos/fall/04-thumb.jpg",
         "width": 2000,
@@ -236,6 +288,8 @@
         "caption": "Boston"
       },
       {
+        "large": "/photos/fall/05-large.jpg",
+        "largeWidth": 3200,
         "full": "/photos/fall/05-full.jpg",
         "thumb": "/photos/fall/05-thumb.jpg",
         "width": 2000,

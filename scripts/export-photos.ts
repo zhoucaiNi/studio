@@ -9,6 +9,7 @@ import type { Collection, Photo } from '../src/types.ts'
 
 const FORBIDDEN = 'Helen Edits'
 const PHOTO_TYPES = new Set(['.jpg', '.jpeg', '.png'])
+const LARGE = { size: 3200, quality: 85 }
 const FULL = { size: 2000, quality: 82 }
 const THUMB = { size: 600, quality: 75 }
 
@@ -79,9 +80,12 @@ export async function exportPhotos(opts: { sourceDir: string; publicDir: string;
     for (const [k, file] of p.files.entries()) {
       const nn = String(k + 1).padStart(2, '0')
       const src = join(p.dir, file)
+      const large = await resized(src, LARGE).toFile(join(photosDir, p.slug, `${nn}-large.jpg`))
       const full = await resized(src, FULL).toFile(join(photosDir, p.slug, `${nn}-full.jpg`))
       await resized(src, THUMB).toFile(join(photosDir, p.slug, `${nn}-thumb.jpg`))
       photos.push({
+        large: `/photos/${p.slug}/${nn}-large.jpg`,
+        largeWidth: large.width,
         full: `/photos/${p.slug}/${nn}-full.jpg`,
         thumb: `/photos/${p.slug}/${nn}-thumb.jpg`,
         width: full.width,

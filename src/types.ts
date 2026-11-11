@@ -1,5 +1,7 @@
 export type Photo = {
-  full: string
+  large: string // up to 3200px, for high-density screens
+  largeWidth: number
+  full: string // up to 2000px
   thumb: string
   width: number
   height: number

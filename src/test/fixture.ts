@@ -1,6 +1,8 @@
 import type { Collection, Photo } from '../types.ts'
 
 const photo = (slug: string, n: number): Photo => ({
+  large: `/photos/${slug}/0${n}-large.jpg`,
+  largeWidth: 3200,
   full: `/photos/${slug}/0${n}-full.jpg`,
   thumb: `/photos/${slug}/0${n}-thumb.jpg`,
   width: 2000,

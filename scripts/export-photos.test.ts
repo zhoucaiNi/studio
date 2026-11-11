@@ -51,14 +51,22 @@ test('orders photos by file name', async () => {
   expect(dusk.photos[1].thumb).toBe('/photos/dusk/02-thumb.jpg')
 })
 
-test('resizes full images to a 2000px long edge and thumbs to 600px', async () => {
-  await jpeg(join(src, '01-Dusk', 'big.jpg'), 3000, 2000)
+test('resizes to a 3200px large, 2000px full and 600px thumb', async () => {
+  await jpeg(join(src, '01-Dusk', 'big.jpg'), 4000, 2000)
   const [dusk] = await run()
+  const large = await sharp(join(pub, 'photos/dusk/01-large.jpg')).metadata()
   const full = await sharp(join(pub, 'photos/dusk/01-full.jpg')).metadata()
   const thumb = await sharp(join(pub, 'photos/dusk/01-thumb.jpg')).metadata()
+  expect(large.width).toBe(3200)
   expect(full.width).toBe(2000)
   expect(thumb.width).toBe(600)
-  expect(dusk.photos[0]).toMatchObject({ width: full.width, height: full.height })
+  expect(dusk.photos[0]).toMatchObject({ large: '/photos/dusk/01-large.jpg', largeWidth: 3200, width: full.width, height: full.height })
+})
+
+test('never enlarges a small source', async () => {
+  await jpeg(join(src, '01-Dusk', 'small.jpg'), 1280, 720)
+  const [dusk] = await run()
+  expect(dusk.photos[0]).toMatchObject({ width: 1280, largeWidth: 1280 })
 })
 
 test('applies EXIF rotation and strips all metadata', async () => {
@@ -71,7 +79,7 @@ test('applies EXIF rotation and strips all metadata', async () => {
     .toFile(path)
   expect((await sharp(path).metadata()).exif).toBeDefined()
   await run()
-  for (const kind of ['full', 'thumb']) {
+  for (const kind of ['large', 'full', 'thumb']) {
     const meta = await sharp(join(pub, `photos/dusk/01-${kind}.jpg`)).metadata()
     expect(meta.height).toBeGreaterThan(meta.width!)
     expect(meta.exif).toBeUndefined()
