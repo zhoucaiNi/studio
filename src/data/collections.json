@@ -1,9 +1,248 @@
 [
   {
-    "slug": "fixture",
-    "name": "Fixture",
+    "slug": "open-country",
+    "name": "Open Country",
     "photos": [
-      { "full": "/photos/fixture/01-full.jpg", "thumb": "/photos/fixture/01-thumb.jpg", "width": 2000, "height": 1333, "alt": "Placeholder photo", "caption": "" }
+      {
+        "full": "/photos/open-country/01-full.jpg",
+        "thumb": "/photos/open-country/01-thumb.jpg",
+        "width": 2000,
+        "height": 1126,
+        "alt": "A herd of bison grazing on green hills",
+        "caption": "2024"
+      },
+      {
+        "full": "/photos/open-country/02-full.jpg",
+        "thumb": "/photos/open-country/02-thumb.jpg",
+        "width": 2000,
+        "height": 1126,
+        "alt": "Black and white photo of two horses by a wire fence",
+        "caption": "2024"
+      },
+      {
+        "full": "/photos/open-country/03-full.jpg",
+        "thumb": "/photos/open-country/03-thumb.jpg",
+        "width": 2000,
+        "height": 1126,
+        "alt": "Three horses standing in a wide green field",
+        "caption": "2024"
+      },
+      {
+        "full": "/photos/open-country/04-full.jpg",
+        "thumb": "/photos/open-country/04-thumb.jpg",
+        "width": 2000,
+        "height": 1126,
+        "alt": "A small boat sitting in a grass field",
+        "caption": "2024"
+      },
+      {
+        "full": "/photos/open-country/05-full.jpg",
+        "thumb": "/photos/open-country/05-thumb.jpg",
+        "width": 2000,
+        "height": 1126,
+        "alt": "Rolling green hills down to the water",
+        "caption": "2024"
+      },
+      {
+        "full": "/photos/open-country/06-full.jpg",
+        "thumb": "/photos/open-country/06-thumb.jpg",
+        "width": 2000,
+        "height": 1126,
+        "alt": "A dirt road through grassland seen through a windshield",
+        "caption": "2024"
+      },
+      {
+        "full": "/photos/open-country/07-full.jpg",
+        "thumb": "/photos/open-country/07-thumb.jpg",
+        "width": 2000,
+        "height": 1126,
+        "alt": "A granite dome framed by leaves under a deep blue sky",
+        "caption": "2024"
+      }
+    ]
+  },
+  {
+    "slug": "dusk",
+    "name": "Dusk",
+    "photos": [
+      {
+        "full": "/photos/dusk/01-full.jpg",
+        "thumb": "/photos/dusk/01-thumb.jpg",
+        "width": 2000,
+        "height": 1126,
+        "alt": "Purple and pink clouds over a still lake",
+        "caption": "2024"
+      },
+      {
+        "full": "/photos/dusk/02-full.jpg",
+        "thumb": "/photos/dusk/02-thumb.jpg",
+        "width": 1280,
+        "height": 720,
+        "alt": "Mauve sky over a distant mountain ridge",
+        "caption": "2024"
+      },
+      {
+        "full": "/photos/dusk/03-full.jpg",
+        "thumb": "/photos/dusk/03-thumb.jpg",
+        "width": 2000,
+        "height": 1126,
+        "alt": "An orange sunset over a flat ocean horizon",
+        "caption": "2024"
+      },
+      {
+        "full": "/photos/dusk/04-full.jpg",
+        "thumb": "/photos/dusk/04-thumb.jpg",
+        "width": 2000,
+        "height": 1126,
+        "alt": "The sun setting, framed by a dark window",
+        "caption": "2024"
+      }
+    ]
+  },
+  {
+    "slug": "san-francisco",
+    "name": "San Francisco",
+    "photos": [
+      {
+        "full": "/photos/san-francisco/01-full.jpg",
+        "thumb": "/photos/san-francisco/01-thumb.jpg",
+        "width": 2000,
+        "height": 1333,
+        "alt": "Houseboats on the water below apartment towers",
+        "caption": "San Francisco"
+      },
+      {
+        "full": "/photos/san-francisco/02-full.jpg",
+        "thumb": "/photos/san-francisco/02-thumb.jpg",
+        "width": 2000,
+        "height": 1126,
+        "alt": "The San Francisco skyline from a hilltop",
+        "caption": "San Francisco"
+      },
+      {
+        "full": "/photos/san-francisco/03-full.jpg",
+        "thumb": "/photos/san-francisco/03-thumb.jpg",
+        "width": 2000,
+        "height": 1333,
+        "alt": "Pastel houses on a hill above the ocean",
+        "caption": "San Francisco"
+      },
+      {
+        "full": "/photos/san-francisco/04-full.jpg",
+        "thumb": "/photos/san-francisco/04-thumb.jpg",
+        "width": 2000,
+        "height": 1333,
+        "alt": "A white twin-spired church above a sunny park",
+        "caption": "San Francisco"
+      },
+      {
+        "full": "/photos/san-francisco/05-full.jpg",
+        "thumb": "/photos/san-francisco/05-thumb.jpg",
+        "width": 2000,
+        "height": 1333,
+        "alt": "A glass skyscraper against a deep blue sky",
+        "caption": "San Francisco"
+      }
+    ]
+  },
+  {
+    "slug": "shoe-rotations",
+    "name": "Shoe Rotations",
+    "photos": [
+      {
+        "full": "/photos/shoe-rotations/01-full.jpg",
+        "thumb": "/photos/shoe-rotations/01-thumb.jpg",
+        "width": 2000,
+        "height": 1333,
+        "alt": "Looking down at brown loafers on pavement",
+        "caption": "Ongoing"
+      },
+      {
+        "full": "/photos/shoe-rotations/02-full.jpg",
+        "thumb": "/photos/shoe-rotations/02-thumb.jpg",
+        "width": 2000,
+        "height": 1333,
+        "alt": "Bare feet and sneakers in the sand",
+        "caption": "Ongoing"
+      },
+      {
+        "full": "/photos/shoe-rotations/03-full.jpg",
+        "thumb": "/photos/shoe-rotations/03-thumb.jpg",
+        "width": 2000,
+        "height": 1333,
+        "alt": "A bicycle wheel beside jeans and boots",
+        "caption": "Ongoing"
+      },
+      {
+        "full": "/photos/shoe-rotations/04-full.jpg",
+        "thumb": "/photos/shoe-rotations/04-thumb.jpg",
+        "width": 2000,
+        "height": 1333,
+        "alt": "A loafer and jeans on a hotel carpet",
+        "caption": "Ongoing"
+      },
+      {
+        "full": "/photos/shoe-rotations/05-full.jpg",
+        "thumb": "/photos/shoe-rotations/05-thumb.jpg",
+        "width": 2000,
+        "height": 1124,
+        "alt": "Black shoes on a stone path between leaves",
+        "caption": "Ongoing"
+      },
+      {
+        "full": "/photos/shoe-rotations/06-full.jpg",
+        "thumb": "/photos/shoe-rotations/06-thumb.jpg",
+        "width": 2000,
+        "height": 1333,
+        "alt": "Sneakers on granite beside a water bottle",
+        "caption": "Ongoing"
+      }
+    ]
+  },
+  {
+    "slug": "fall",
+    "name": "Fall",
+    "photos": [
+      {
+        "full": "/photos/fall/01-full.jpg",
+        "thumb": "/photos/fall/01-thumb.jpg",
+        "width": 2000,
+        "height": 1124,
+        "alt": "Red leaves around a dark tree trunk",
+        "caption": "Fall"
+      },
+      {
+        "full": "/photos/fall/02-full.jpg",
+        "thumb": "/photos/fall/02-thumb.jpg",
+        "width": 2000,
+        "height": 1124,
+        "alt": "Bright red autumn leaves over a lawn",
+        "caption": "Fall"
+      },
+      {
+        "full": "/photos/fall/03-full.jpg",
+        "thumb": "/photos/fall/03-thumb.jpg",
+        "width": 2000,
+        "height": 1124,
+        "alt": "A person crouched among bright red leaves",
+        "caption": "Fall"
+      },
+      {
+        "full": "/photos/fall/04-full.jpg",
+        "thumb": "/photos/fall/04-thumb.jpg",
+        "width": 2000,
+        "height": 1124,
+        "alt": "Two pumpkins on brownstone steps",
+        "caption": "Boston"
+      },
+      {
+        "full": "/photos/fall/05-full.jpg",
+        "thumb": "/photos/fall/05-thumb.jpg",
+        "width": 2000,
+        "height": 1124,
+        "alt": "A pumpkin in a bright blue window box",
+        "caption": "Boston"
+      }
     ]
   }
 ]
