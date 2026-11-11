@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { act, render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { beforeEach, expect, test } from 'vitest'
 import App from './App.tsx'
@@ -47,12 +47,20 @@ test('the photo offers the large file to high-density screens', () => {
   expect(img.getAttribute('sizes')).toBeTruthy()
 })
 
-test('the Prints and Info links keep the photo you were on', async () => {
+test('the sidebar has no Prints or Info links', () => {
+  render(<App collections={fixture} />)
+  expect(screen.queryByRole('link', { name: 'Prints' })).not.toBeInTheDocument()
+  expect(screen.queryByRole('link', { name: 'Info' })).not.toBeInTheDocument()
+  expect(screen.getByRole('link', { name: 'Instagram' })).toHaveAttribute('href', 'https://instagram.com/zhouca2')
+})
+
+test('an in-page anchor in the URL keeps the photo you were on', () => {
   history.replaceState(null, '', '/#/a/3')
   render(<App collections={fixture} />)
-  await userEvent.click(screen.getByRole('link', { name: 'Prints' }))
-  expect(counter()).toBe('03 / 03')
-  await userEvent.click(screen.getByRole('link', { name: 'Info' }))
+  act(() => {
+    history.pushState(null, '', '/#prints')
+    window.dispatchEvent(new HashChangeEvent('hashchange'))
+  })
   expect(counter()).toBe('03 / 03')
 })
 

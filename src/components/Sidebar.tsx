@@ -29,8 +29,6 @@ export function Sidebar({ collections, current, onPick }: Props) {
         </ul>
       </nav>
       <nav aria-label="Site" className="site-links">
-        <a href="#prints">Prints</a>
-        <a href="#info">Info</a>
         <a href={INSTAGRAM_URL}>Instagram</a>
       </nav>
     </aside>
