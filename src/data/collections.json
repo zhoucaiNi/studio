@@ -1,0 +1,9 @@
+[
+  {
+    "slug": "fixture",
+    "name": "Fixture",
+    "photos": [
+      { "full": "/photos/fixture/01-full.jpg", "thumb": "/photos/fixture/01-thumb.jpg", "width": 2000, "height": 1333, "alt": "Placeholder photo", "caption": "" }
+    ]
+  }
+]
