@@ -39,3 +39,32 @@ test('shows the print copy', () => {
     screen.getByText("Archival pigment prints, made to order. Pick a size and send a request; I'll reply with a price and timing."),
   ).toBeInTheDocument()
 })
+
+test('Gmail link opens a pre-filled compose in a new tab', async () => {
+  render(<PrintRequest collectionName="Dusk & Water" photoNumber={3} photoUrl="https://studio.zhoucai.me/#/dusk-water/3" />)
+  const link = screen.getByRole('link', { name: /Open in Gmail/ })
+  expect(link).toHaveAttribute('target', '_blank')
+  const url = new URL(link.getAttribute('href')!)
+  expect(url.origin + url.pathname).toBe('https://mail.google.com/mail/')
+  expect(url.searchParams.get('view')).toBe('cm')
+  expect(url.searchParams.get('to')).toBe('nizhoucai@gmail.com')
+  expect(url.searchParams.get('su')).toBe('Print request: Dusk & Water 03')
+  expect(url.searchParams.get('body')).toContain('Size: 11×14 in')
+})
+
+test('Copy request puts the address and message on the clipboard', async () => {
+  const user = userEvent.setup()
+  render(<PrintRequest collectionName="Dusk" photoNumber={2} photoUrl="https://studio.zhoucai.me/#/dusk/2" />)
+  await user.click(screen.getByRole('button', { name: '16×20 in' }))
+  await user.click(screen.getByRole('button', { name: 'Copy request' }))
+  const copied = await navigator.clipboard.readText()
+  expect(copied).toContain('To: nizhoucai@gmail.com')
+  expect(copied).toContain('Subject: Print request: Dusk 02')
+  expect(copied).toContain('Size: 16×20 in')
+  expect(screen.getByRole('button', { name: 'Copied' })).toBeInTheDocument()
+})
+
+test('shows the address as a fallback', () => {
+  render(<PrintRequest collectionName="Dusk" photoNumber={1} photoUrl="x" />)
+  expect(screen.getByRole('link', { name: 'nizhoucai@gmail.com' })).toHaveAttribute('href', 'mailto:nizhoucai@gmail.com')
+})
