@@ -91,12 +91,12 @@
       },
       {
         "large": "/photos/dusk/02-large.jpg",
-        "largeWidth": 1280,
+        "largeWidth": 3200,
         "full": "/photos/dusk/02-full.jpg",
         "thumb": "/photos/dusk/02-thumb.jpg",
-        "width": 1280,
-        "height": 720,
-        "alt": "Mauve sky over a distant mountain ridge",
+        "width": 2000,
+        "height": 1126,
+        "alt": "An orange sunset over a flat ocean horizon",
         "caption": "2024"
       },
       {
@@ -104,16 +104,6 @@
         "largeWidth": 3200,
         "full": "/photos/dusk/03-full.jpg",
         "thumb": "/photos/dusk/03-thumb.jpg",
-        "width": 2000,
-        "height": 1126,
-        "alt": "An orange sunset over a flat ocean horizon",
-        "caption": "2024"
-      },
-      {
-        "large": "/photos/dusk/04-large.jpg",
-        "largeWidth": 3200,
-        "full": "/photos/dusk/04-full.jpg",
-        "thumb": "/photos/dusk/04-thumb.jpg",
         "width": 2000,
         "height": 1126,
         "alt": "The sun setting, framed by a dark window",
