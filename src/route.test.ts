@@ -34,3 +34,8 @@ test('formatHash builds a 1-based hash', () => {
   expect(formatHash(fixture, 1, 0)).toBe('#/b/1')
   expect(formatHash(fixture, 0, 2)).toBe('#/a/3')
 })
+
+test('reads percent-encoded slugs', () => {
+  const cols = [{ ...fixture[0], slug: 'café' }]
+  expect(parseHash('#/caf%C3%A9/2', cols)).toEqual({ c: 0, i: 1 })
+})

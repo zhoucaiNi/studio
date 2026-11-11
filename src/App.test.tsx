@@ -18,7 +18,7 @@ test('renders the name', () => {
 test('clicking the photo advances', async () => {
   render(<App collections={fixture} />)
   expect(counter()).toBe('01 / 03')
-  await userEvent.click(screen.getByRole('button', { name: 'Next photo' }))
+  await userEvent.click(screen.getByRole('button', { name: /Next photo/ }))
   expect(counter()).toBe('02 / 03')
   expect(screen.getByRole('img', { name: 'a photo 2' })).toBeInTheDocument()
 })
@@ -45,4 +45,18 @@ test('the photo offers the large file to high-density screens', () => {
   const img = screen.getByRole('img', { name: 'a photo 1' })
   expect(img).toHaveAttribute('srcset', '/photos/a/01-full.jpg 2000w, /photos/a/01-large.jpg 3200w')
   expect(img.getAttribute('sizes')).toBeTruthy()
+})
+
+test('the Prints and Info links keep the photo you were on', async () => {
+  history.replaceState(null, '', '/#/a/3')
+  render(<App collections={fixture} />)
+  await userEvent.click(screen.getByRole('link', { name: 'Prints' }))
+  expect(counter()).toBe('03 / 03')
+  await userEvent.click(screen.getByRole('link', { name: 'Info' }))
+  expect(counter()).toBe('03 / 03')
+})
+
+test('the photo button names the photo for screen readers', () => {
+  render(<App collections={fixture} />)
+  expect(screen.getByRole('button', { name: 'a photo 1. Next photo' })).toBeInTheDocument()
 })

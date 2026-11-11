@@ -27,7 +27,7 @@ export function Viewer({ collection, photo, gridOpen, onNext, onOpen }: Props) {
     )
   }
   return (
-    <button type="button" className="stage" aria-label="Next photo" onClick={onNext}>
+    <button type="button" className="stage" aria-label={`${photo.alt}. Next photo`} onClick={onNext}>
       <img
         key={photo.full}
         className="photo"

@@ -36,7 +36,7 @@ async function plan(sourceDir: string): Promise<Plan[]> {
       continue
     }
     const name = match[1].replace(/-/g, ' ')
-    const slug = match[1].toLowerCase()
+    const slug = match[1].toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
     const other = seen.get(slug)
     if (other) throw new Error(`Folders "${other}" and "${folder}" both make the slug "${slug}"`)
     seen.set(slug, folder)

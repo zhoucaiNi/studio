@@ -143,3 +143,11 @@ test('clears photos from earlier runs', async () => {
   await run()
   expect(existsSync(join(pub, 'photos', 'old'))).toBe(false)
 })
+
+test('slugs keep only letters, numbers and hyphens', async () => {
+  await jpeg(join(src, '01-Dusk-&-Water #2', 'a.jpg'))
+  const [c] = await run()
+  expect(c.slug).toBe('dusk-water-2')
+  expect(c.name).toBe('Dusk & Water #2')
+  expect(c.photos[0].full).toBe('/photos/dusk-water-2/01-full.jpg')
+})

@@ -43,7 +43,13 @@ export function useGallery(collections: Collection[]) {
   }, [collections, c, i])
 
   useEffect(() => {
-    const follow = () => setView(fromHash(collections))
+    const follow = () => {
+      // in-page anchors like #prints are not photo links
+      if (location.hash && !location.hash.startsWith('#/')) return
+      const next = fromHash(collections)
+      lastC.current = next.c // fixing up a hand-typed hash replaces it instead of adding history
+      setView(next)
+    }
     window.addEventListener('hashchange', follow)
     window.addEventListener('popstate', follow)
     return () => {

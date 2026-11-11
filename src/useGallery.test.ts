@@ -89,3 +89,15 @@ test('ignores keys typed in a text field', () => {
   expect(result.current.i).toBe(0)
   input.remove()
 })
+
+test('a hand-edited hash that needs fixing is replaced, not added to history', () => {
+  const { result } = start('#/a/2')
+  const before = history.length
+  act(() => {
+    history.pushState(null, '', '/#/b/99')
+    window.dispatchEvent(new HashChangeEvent('hashchange'))
+  })
+  expect(result.current).toMatchObject({ c: 1, i: 0 })
+  expect(location.hash).toBe('#/b/1')
+  expect(history.length).toBe(before + 1)
+})
