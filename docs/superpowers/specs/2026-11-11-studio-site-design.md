@@ -130,7 +130,8 @@ and the photo fits the screen width.
 - "Request this print" is a `mailto:` link to the contact email, with subject
   `Print request: <Collection> <NN>` and a body naming the collection, photo number, size and
   the photo's URL.
-- The contact email and Instagram handle live in one config file, `src/config.ts`.
+- The contact email (`nizhoucai@gmail.com`) and Instagram (`@zhouca2`,
+  `https://instagram.com/zhouca2`) live in one config file, `src/config.ts`.
 
 ### Accessibility
 
