@@ -10,9 +10,9 @@
         "thumb": "/photos/open-country/01-thumb.jpg",
         "width": 2000,
         "height": 1126,
-        "alt": "A herd of bison grazing on green hills",
+        "alt": "Three horses standing in a wide green field",
         "caption": "2024",
-        "color": "#697318"
+        "color": "#9c9336"
       },
       {
         "large": "/photos/open-country/02-large.jpg",
@@ -21,9 +21,9 @@
         "thumb": "/photos/open-country/02-thumb.jpg",
         "width": 2000,
         "height": 1126,
-        "alt": "Black and white photo of two horses by a wire fence",
+        "alt": "A herd of bison grazing on green hills",
         "caption": "2024",
-        "color": "#acacac"
+        "color": "#697318"
       },
       {
         "large": "/photos/open-country/03-large.jpg",
@@ -32,9 +32,9 @@
         "thumb": "/photos/open-country/03-thumb.jpg",
         "width": 2000,
         "height": 1126,
-        "alt": "Three horses standing in a wide green field",
+        "alt": "Black and white photo of two horses by a wire fence",
         "caption": "2024",
-        "color": "#9c9336"
+        "color": "#acacac"
       },
       {
         "large": "/photos/open-country/04-large.jpg",
@@ -68,17 +68,6 @@
         "alt": "A dirt road through grassland seen through a windshield",
         "caption": "2024",
         "color": "#6dafd1"
-      },
-      {
-        "large": "/photos/open-country/07-large.jpg",
-        "largeWidth": 3200,
-        "full": "/photos/open-country/07-full.jpg",
-        "thumb": "/photos/open-country/07-thumb.jpg",
-        "width": 2000,
-        "height": 1126,
-        "alt": "A granite dome framed by leaves under a deep blue sky",
-        "caption": "2024",
-        "color": "#0e5aa0"
       }
     ]
   },
