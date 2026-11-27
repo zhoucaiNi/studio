@@ -2,6 +2,10 @@ import type { Collection } from './types.ts'
 
 export type Position = { c: number; i: number }
 
+export const COLOUR_HASH = '#/colour'
+
+export const isColourHash = (hash: string) => hash.replace(/^#\/?/, '').replace(/\/$/, '').toLowerCase() === 'colour'
+
 // '#/<slug>/<n>' with n 1-based; anything unreadable falls back to the first photo
 export function parseHash(hash: string, collections: Collection[]): Position {
   let path = hash.replace(/^#\/?/, '')
