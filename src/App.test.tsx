@@ -120,7 +120,8 @@ test('colour-only photos are not collections in the sidebar, but they count towa
   render(<App collections={[...fixture, colourOnly]} />)
   const collections = screen.getByRole('navigation', { name: 'Collections' })
   expect(within(collections).queryByRole('button', { name: /Extras/ })).not.toBeInTheDocument()
-  expect(within(collections).getAllByRole('button')).toHaveLength(2)
+  // Portraits is listed too, but disabled
+  expect(within(collections).getAllByRole('button').filter((b) => !b.hasAttribute('disabled'))).toHaveLength(2)
   expect(screen.getByRole('button', { name: /^Colour/ })).toHaveTextContent('06')
 })
 
@@ -141,4 +142,18 @@ test('a #/extras/2 link opens that colour-only photo', () => {
   history.replaceState(null, '', '/#/extras/2')
   render(<App collections={[...fixture, colourOnly]} />)
   expect(counter()).toBe('02 / 02')
+})
+
+test('Portraits is listed as a work in progress and cannot be opened', async () => {
+  render(<App collections={fixture} />)
+  const collections = screen.getByRole('navigation', { name: 'Collections' })
+  const portraits = within(collections).getByRole('button', { name: /^Portraits/ })
+  expect(portraits).toBeDisabled()
+  expect(portraits).toHaveTextContent('wip')
+  const before = location.hash
+  await userEvent.click(portraits)
+  expect(location.hash).toBe(before)
+  expect(counter()).toBe('01 / 03')
+  // it has no photos yet, so it is not counted anywhere
+  expect(screen.getByRole('button', { name: /^Colour/ })).toHaveTextContent('04')
 })

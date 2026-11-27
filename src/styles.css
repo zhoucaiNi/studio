@@ -111,6 +111,16 @@ ul {
   color: var(--ink);
 }
 
+/* a section that is still a work in progress: listed, but not clickable */
+.collection:disabled {
+  cursor: default;
+  opacity: 0.55;
+}
+
+.collection:disabled:hover {
+  color: var(--muted);
+}
+
 .collection[aria-current='true'] {
   color: var(--ink);
   font-weight: 500;
