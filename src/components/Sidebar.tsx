@@ -1,4 +1,4 @@
-import { INSTAGRAM_URL, MAIN_SITE_URL } from '../config.ts'
+import { COMING_SOON, INSTAGRAM_URL, MAIN_SITE_URL } from '../config.ts'
 import { pad } from '../pad.ts'
 import type { Collection } from '../types.ts'
 
@@ -34,6 +34,14 @@ export function Sidebar({ collections, current, colour, onPick, onColour }: Prop
               </li>
             ),
           )}
+          {COMING_SOON.map((name) => (
+            <li key={name}>
+              <button type="button" className="collection" disabled>
+                <span>{name}</span>
+                <span className="count">wip</span>
+              </button>
+            </li>
+          ))}
         </ul>
       </nav>
       <nav aria-label="All photos" className="all-photos">
