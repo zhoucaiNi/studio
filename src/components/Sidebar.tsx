@@ -19,24 +19,31 @@ export function Sidebar({ collections, current, colour, onPick, onColour }: Prop
       <nav aria-label="Collections">
         <p className="label">Collections</p>
         <ul className="collections">
-          {collections.map((col, k) => (
-            <li key={col.slug}>
-              <button
-                type="button"
-                className="collection"
-                aria-current={k === current && !colour ? 'true' : undefined}
-                onClick={() => onPick(k)}
-              >
-                <span>{col.name}</span>
-                <span className="count">{pad(col.photos.length)}</span>
-              </button>
-            </li>
-          ))}
+          {collections.map((col, k) =>
+            col.hidden ? null : (
+              <li key={col.slug}>
+                <button
+                  type="button"
+                  className="collection"
+                  aria-current={k === current && !colour ? 'true' : undefined}
+                  onClick={() => onPick(k)}
+                >
+                  <span>{col.name}</span>
+                  <span className="count">{pad(col.photos.length)}</span>
+                </button>
+              </li>
+            ),
+          )}
         </ul>
       </nav>
       <nav aria-label="All photos" className="all-photos">
         <p className="label">All photos</p>
-        <button type="button" className="collection" aria-current={colour ? 'true' : undefined} onClick={onColour}>
+        <button
+          type="button"
+          className="collection"
+          aria-current={colour || collections[current].hidden ? 'true' : undefined}
+          onClick={onColour}
+        >
           <span>Colour</span>
           <span className="count">{pad(collections.reduce((n, col) => n + col.photos.length, 0))}</span>
         </button>
