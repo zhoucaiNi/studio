@@ -10,9 +10,9 @@
         "thumb": "/photos/open-country/01-thumb.jpg",
         "width": 2000,
         "height": 1126,
-        "alt": "A herd of bison grazing on green hills",
+        "alt": "Three horses standing in a wide green field",
         "caption": "2024",
-        "color": "#697318"
+        "color": "#9c9336"
       },
       {
         "large": "/photos/open-country/02-large.jpg",
@@ -21,9 +21,9 @@
         "thumb": "/photos/open-country/02-thumb.jpg",
         "width": 2000,
         "height": 1126,
-        "alt": "Black and white photo of two horses by a wire fence",
+        "alt": "A herd of bison grazing on green hills",
         "caption": "2024",
-        "color": "#acacac"
+        "color": "#697318"
       },
       {
         "large": "/photos/open-country/03-large.jpg",
@@ -32,9 +32,9 @@
         "thumb": "/photos/open-country/03-thumb.jpg",
         "width": 2000,
         "height": 1126,
-        "alt": "Three horses standing in a wide green field",
+        "alt": "Black and white photo of two horses by a wire fence",
         "caption": "2024",
-        "color": "#9c9336"
+        "color": "#acacac"
       },
       {
         "large": "/photos/open-country/04-large.jpg",
@@ -68,56 +68,78 @@
         "alt": "A dirt road through grassland seen through a windshield",
         "caption": "2024",
         "color": "#6dafd1"
-      },
-      {
-        "large": "/photos/open-country/07-large.jpg",
-        "largeWidth": 3200,
-        "full": "/photos/open-country/07-full.jpg",
-        "thumb": "/photos/open-country/07-thumb.jpg",
-        "width": 2000,
-        "height": 1126,
-        "alt": "A granite dome framed by leaves under a deep blue sky",
-        "caption": "2024",
-        "color": "#0e5aa0"
       }
     ]
   },
   {
-    "slug": "dusk",
-    "name": "Dusk",
+    "slug": "t-max-400-bw",
+    "name": "T-Max 400 BW",
     "photos": [
       {
-        "large": "/photos/dusk/01-large.jpg",
-        "largeWidth": 3200,
-        "full": "/photos/dusk/01-full.jpg",
-        "thumb": "/photos/dusk/01-thumb.jpg",
+        "large": "/photos/t-max-400-bw/01-large.jpg",
+        "largeWidth": 2048,
+        "full": "/photos/t-max-400-bw/01-full.jpg",
+        "thumb": "/photos/t-max-400-bw/01-thumb.jpg",
         "width": 2000,
-        "height": 1126,
-        "alt": "Purple and pink clouds over a still lake",
-        "caption": "2024",
-        "color": "#8578b4"
+        "height": 1486,
+        "alt": "Two crows perched on the roof of a small hut above a foggy sea",
+        "caption": "",
+        "color": "#737373"
       },
       {
-        "large": "/photos/dusk/02-large.jpg",
-        "largeWidth": 3200,
-        "full": "/photos/dusk/02-full.jpg",
-        "thumb": "/photos/dusk/02-thumb.jpg",
+        "large": "/photos/t-max-400-bw/02-large.jpg",
+        "largeWidth": 2048,
+        "full": "/photos/t-max-400-bw/02-full.jpg",
+        "thumb": "/photos/t-max-400-bw/02-thumb.jpg",
         "width": 2000,
-        "height": 1126,
-        "alt": "An orange sunset over a flat ocean horizon",
-        "caption": "2024",
-        "color": "#f2e0b9"
+        "height": 1437,
+        "alt": "A weathered, eroded cliff face against a pale sky",
+        "caption": "",
+        "color": "#acacac"
       },
       {
-        "large": "/photos/dusk/03-large.jpg",
-        "largeWidth": 3200,
-        "full": "/photos/dusk/03-full.jpg",
-        "thumb": "/photos/dusk/03-thumb.jpg",
+        "large": "/photos/t-max-400-bw/03-large.jpg",
+        "largeWidth": 2048,
+        "full": "/photos/t-max-400-bw/03-full.jpg",
+        "thumb": "/photos/t-max-400-bw/03-thumb.jpg",
         "width": 2000,
-        "height": 1126,
-        "alt": "The sun setting, framed by a dark window",
-        "caption": "2024",
-        "color": "#cb7f4c"
+        "height": 1461,
+        "alt": "A cut tree stump with a hollow centre on a bed of wood chips",
+        "caption": "",
+        "color": "#464646"
+      },
+      {
+        "large": "/photos/t-max-400-bw/04-large.jpg",
+        "largeWidth": 2048,
+        "full": "/photos/t-max-400-bw/04-full.jpg",
+        "thumb": "/photos/t-max-400-bw/04-thumb.jpg",
+        "width": 2000,
+        "height": 1455,
+        "alt": "The railed lantern room of a lighthouse seen from below against a white sky",
+        "caption": "",
+        "color": "#d2d2d2"
+      },
+      {
+        "large": "/photos/t-max-400-bw/05-large.jpg",
+        "largeWidth": 2048,
+        "full": "/photos/t-max-400-bw/05-full.jpg",
+        "thumb": "/photos/t-max-400-bw/05-thumb.jpg",
+        "width": 2000,
+        "height": 1461,
+        "alt": "A weathered shingled roof and railings above breaking waves",
+        "caption": "",
+        "color": "#707070"
+      },
+      {
+        "large": "/photos/t-max-400-bw/06-large.jpg",
+        "largeWidth": 2048,
+        "full": "/photos/t-max-400-bw/06-full.jpg",
+        "thumb": "/photos/t-max-400-bw/06-thumb.jpg",
+        "width": 2000,
+        "height": 1429,
+        "alt": "Snow-laden pine trees beside a dark wooden building",
+        "caption": "",
+        "color": "#7c7c7c"
       }
     ]
   },
@@ -132,9 +154,9 @@
         "thumb": "/photos/san-francisco/01-thumb.jpg",
         "width": 2000,
         "height": 1126,
-        "alt": "A San Francisco street leading toward the Bay Bridge",
+        "alt": "Rooftops of a hillside neighbourhood seen through cypress trunks",
         "caption": "",
-        "color": "#565a29"
+        "color": "#73653d"
       },
       {
         "large": "/photos/san-francisco/02-large.jpg",
@@ -143,9 +165,9 @@
         "thumb": "/photos/san-francisco/02-thumb.jpg",
         "width": 2000,
         "height": 1126,
-        "alt": "The Golden Gate Bridge tower rising behind a concrete wall and grasses",
+        "alt": "A San Francisco street leading toward the Bay Bridge",
         "caption": "",
-        "color": "#76a7c6"
+        "color": "#565a29"
       },
       {
         "large": "/photos/san-francisco/03-large.jpg",
@@ -154,9 +176,9 @@
         "thumb": "/photos/san-francisco/03-thumb.jpg",
         "width": 2000,
         "height": 1126,
-        "alt": "Three colourful Victorian houses above green treetops",
+        "alt": "The Golden Gate Bridge tower rising behind a concrete wall and grasses",
         "caption": "",
-        "color": "#757d38"
+        "color": "#76a7c6"
       },
       {
         "large": "/photos/san-francisco/04-large.jpg",
@@ -165,9 +187,9 @@
         "thumb": "/photos/san-francisco/04-thumb.jpg",
         "width": 2000,
         "height": 1126,
-        "alt": "Sutro Tower between a tree trunk and an apartment building",
+        "alt": "Three colourful Victorian houses above green treetops",
         "caption": "",
-        "color": "#51434f"
+        "color": "#757d38"
       },
       {
         "large": "/photos/san-francisco/05-large.jpg",
@@ -176,9 +198,9 @@
         "thumb": "/photos/san-francisco/05-thumb.jpg",
         "width": 2000,
         "height": 1126,
-        "alt": "A tall office tower and a terraced building against a deep blue sky",
+        "alt": "Sutro Tower between a tree trunk and an apartment building",
         "caption": "",
-        "color": "#3d71a7"
+        "color": "#51434f"
       },
       {
         "large": "/photos/san-francisco/06-large.jpg",
@@ -187,9 +209,9 @@
         "thumb": "/photos/san-francisco/06-thumb.jpg",
         "width": 2000,
         "height": 1126,
-        "alt": "A grey, misty beach with low waves",
+        "alt": "A tall office tower and a terraced building against a deep blue sky",
         "caption": "",
-        "color": "#c0c1b3"
+        "color": "#3d71a7"
       },
       {
         "large": "/photos/san-francisco/07-large.jpg",
@@ -198,9 +220,9 @@
         "thumb": "/photos/san-francisco/07-thumb.jpg",
         "width": 2000,
         "height": 1126,
-        "alt": "A crowded street market under red lanterns",
+        "alt": "A grey, misty beach with low waves",
         "caption": "",
-        "color": "#b4463c"
+        "color": "#c0c1b3"
       },
       {
         "large": "/photos/san-francisco/08-large.jpg",
@@ -209,9 +231,9 @@
         "thumb": "/photos/san-francisco/08-thumb.jpg",
         "width": 2000,
         "height": 1126,
-        "alt": "Distant hills across a valley, framed by dark trees",
+        "alt": "A crowded street market under red lanterns",
         "caption": "",
-        "color": "#84a2c0"
+        "color": "#b4463c"
       },
       {
         "large": "/photos/san-francisco/09-large.jpg",
@@ -220,9 +242,9 @@
         "thumb": "/photos/san-francisco/09-thumb.jpg",
         "width": 2000,
         "height": 1126,
-        "alt": "A red Japanese pagoda gate and tower among green trees",
+        "alt": "Distant hills across a valley, framed by dark trees",
         "caption": "",
-        "color": "#607022"
+        "color": "#84a2c0"
       },
       {
         "large": "/photos/san-francisco/10-large.jpg",
@@ -231,9 +253,9 @@
         "thumb": "/photos/san-francisco/10-thumb.jpg",
         "width": 2000,
         "height": 1126,
-        "alt": "A rooftop chimney and a lit Ferris wheel by the bay at dusk",
+        "alt": "A red Japanese pagoda gate and tower among green trees",
         "caption": "",
-        "color": "#4c4848"
+        "color": "#607022"
       },
       {
         "large": "/photos/san-francisco/11-large.jpg",
@@ -242,9 +264,9 @@
         "thumb": "/photos/san-francisco/11-thumb.jpg",
         "width": 2000,
         "height": 1126,
-        "alt": "The ocean and two small rocks seen past a ledge of grass",
+        "alt": "A rooftop chimney and a lit Ferris wheel by the bay at dusk",
         "caption": "",
-        "color": "#a79463"
+        "color": "#4c4848"
       },
       {
         "large": "/photos/san-francisco/12-large.jpg",
@@ -253,9 +275,9 @@
         "thumb": "/photos/san-francisco/12-thumb.jpg",
         "width": 2000,
         "height": 1126,
-        "alt": "Rippled blue-green ocean below a grassy cliff",
+        "alt": "The ocean and two small rocks seen past a ledge of grass",
         "caption": "",
-        "color": "#58632e"
+        "color": "#a79463"
       },
       {
         "large": "/photos/san-francisco/13-large.jpg",
@@ -264,9 +286,9 @@
         "thumb": "/photos/san-francisco/13-thumb.jpg",
         "width": 2000,
         "height": 1126,
-        "alt": "Rooftops of a hillside neighbourhood seen through cypress trunks",
+        "alt": "Rippled blue-green ocean below a grassy cliff",
         "caption": "",
-        "color": "#73653d"
+        "color": "#58632e"
       },
       {
         "large": "/photos/san-francisco/14-large.jpg",
