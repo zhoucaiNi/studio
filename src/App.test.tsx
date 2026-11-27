@@ -1,4 +1,4 @@
-import { act, render, screen } from '@testing-library/react'
+import { act, render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { beforeEach, expect, test } from 'vitest'
 import App from './App.tsx'
@@ -94,4 +94,12 @@ test('a #/colour link opens the chart', () => {
   history.replaceState(null, '', '/#/colour')
   render(<App collections={fixture} />)
   expect(screen.getByText('Colour · 4 photos in 3 groups')).toBeInTheDocument()
+})
+
+test('Colour is its own group in the sidebar, not one of the collections', () => {
+  render(<App collections={fixture} />)
+  const collections = screen.getByRole('navigation', { name: 'Collections' })
+  expect(within(collections).queryByRole('button', { name: /^Colour/ })).not.toBeInTheDocument()
+  const everything = screen.getByRole('navigation', { name: 'All photos' })
+  expect(within(everything).getByRole('button', { name: /^Colour/ })).toHaveTextContent('04')
 })

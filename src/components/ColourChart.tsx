@@ -48,69 +48,63 @@ export function ColourChart({ collections, onOpen }: Props) {
 
   const group = groups[picked]
   const current = group.items[shown]
-  // the card sits in the corner away from the square you picked, so it never covers it
-  const side = `${spots[picked].x > size.w / 2 ? 'left' : 'right'} ${spots[picked].y > size.h / 2 ? 'top' : 'bottom'}`
 
   return (
     <div className="colour">
-      <div className="colour-stage">
-        <div ref={chartRef} className="colour-chart" style={{ ['--sq' as string]: `${square}px` }}>
-          <span className="colour-axis colour-axis-x" aria-hidden="true" />
-          <span className="colour-axis colour-axis-y" aria-hidden="true" />
-          <span className="label colour-end colour-yellow" aria-hidden="true">yellow</span>
-          <span className="label colour-end colour-blue" aria-hidden="true">blue</span>
-          <span className="label colour-end colour-green" aria-hidden="true">green</span>
-          <span className="label colour-end colour-red" aria-hidden="true">red</span>
-          {groups.map((g, k) => (
-            <button
-              key={g.hex + k}
-              type="button"
-              className="colour-hit"
-              style={{ left: spots[k].x, top: spots[k].y }}
-              aria-label={`${plural(g.items.length, 'photo')}, ${g.hex}`}
-              aria-current={k === picked ? 'true' : undefined}
-              onMouseEnter={() => pick(k)}
-              onFocus={() => pick(k)}
-              onClick={() => pick(k)}
-            >
-              {g.items.length > 1 && <span className="colour-sq colour-sq-back" style={{ background: g.hex }} />}
-              <span className="colour-sq" style={{ background: g.hex }} />
-              {g.items.length > 1 && <span className="colour-count">{g.items.length}</span>}
-            </button>
-          ))}
-        </div>
-        <div className={`colour-card ${side}`}>
-          <p className="label">
-            {plural(group.items.length, 'photo')} · {group.hex}
-          </p>
+      <div ref={chartRef} className="colour-chart" style={{ ['--sq' as string]: `${square}px` }}>
+        <span className="colour-axis colour-axis-x" aria-hidden="true" />
+        <span className="colour-axis colour-axis-y" aria-hidden="true" />
+        <span className="label colour-end colour-yellow" aria-hidden="true">yellow</span>
+        <span className="label colour-end colour-blue" aria-hidden="true">blue</span>
+        <span className="label colour-end colour-green" aria-hidden="true">green</span>
+        <span className="label colour-end colour-red" aria-hidden="true">red</span>
+        {groups.map((g, k) => (
           <button
+            key={g.hex + k}
             type="button"
-            className="colour-big"
-            aria-label={`Open ${current.photo.alt}`}
-            onClick={() => onOpen(current.c, current.i)}
+            className="colour-hit"
+            style={{ left: spots[k].x, top: spots[k].y }}
+            aria-label={`${plural(g.items.length, 'photo')}, ${g.hex}`}
+            aria-current={k === picked ? 'true' : undefined}
+            onMouseEnter={() => pick(k)}
+            onFocus={() => pick(k)}
+            onClick={() => pick(k)}
           >
-            <img src={current.photo.thumb} alt="" />
+            {g.items.length > 1 && <span className="colour-sq colour-sq-back" style={{ background: g.hex }} />}
+            <span className="colour-sq" style={{ background: g.hex }} />
+            {g.items.length > 1 && <span className="colour-count">{g.items.length}</span>}
           </button>
-          <ul className="colour-members">
-            {group.items.map((m, k) => (
-              <li key={m.photo.thumb}>
-                <button
-                  type="button"
-                  className="colour-member"
-                  aria-label={`${m.name} ${pad(m.i + 1)}`}
-                  aria-current={k === shown ? 'true' : undefined}
-                  onClick={() => setShown(k)}
-                >
-                  <img src={m.photo.thumb} alt="" loading="lazy" />
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
+        ))}
       </div>
-      <div className="controls">
-        <p className="caption">{`Colour · ${plural(entries.length, 'photo')} in ${plural(groups.length, 'group')}`}</p>
-        <div className="nav-buttons">
+      {/* the photos always show here, in the same place */}
+      <aside className="colour-panel" aria-label="Photos in this colour">
+        <p className="label">
+          {plural(group.items.length, 'photo')} · {group.hex}
+        </p>
+        <button
+          type="button"
+          className="colour-big"
+          aria-label={`Open ${current.photo.alt}`}
+          onClick={() => onOpen(current.c, current.i)}
+        >
+          <img src={current.photo.thumb} alt="" />
+        </button>
+        <ul className="colour-members">
+          {group.items.map((m, k) => (
+            <li key={m.photo.thumb}>
+              <button
+                type="button"
+                className="colour-member"
+                aria-label={`${m.name} ${pad(m.i + 1)}`}
+                aria-current={k === shown ? 'true' : undefined}
+                onClick={() => setShown(k)}
+              >
+                <img src={m.photo.thumb} alt="" loading="lazy" />
+              </button>
+            </li>
+          ))}
+        </ul>
+        <div className="colour-open">
           <span className="muted">
             {current.name} · {pad(current.i + 1)}
           </span>
@@ -118,7 +112,8 @@ export function ColourChart({ collections, onOpen }: Props) {
             open photo
           </button>
         </div>
-      </div>
+      </aside>
+      <p className="label colour-caption">{`Colour · ${plural(entries.length, 'photo')} in ${plural(groups.length, 'group')}`}</p>
     </div>
   )
 }

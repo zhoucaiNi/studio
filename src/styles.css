@@ -378,20 +378,21 @@ ul {
   text-underline-offset: 3px;
 }
 
-/* colour page: photos with similar colours share one square on an a*/b* chart */
-.colour {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+/* colour page: every photo on one chart, photos always shown in the panel beside it */
+.all-photos {
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
 }
 
-.colour-stage {
-  position: relative;
+.colour {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 20px 32px;
+  align-items: start;
 }
 
 .colour-chart {
   position: relative;
-  width: 100%;
   height: 78vh;
   min-height: 420px;
   max-height: 960px;
@@ -501,32 +502,14 @@ ul {
   text-align: center;
 }
 
-.colour-card {
-  position: absolute;
-  z-index: 10;
-  width: 300px;
-  max-height: calc(100% - 48px);
+.colour-panel {
+  height: 78vh;
+  min-height: 420px;
+  max-height: 960px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  background: var(--paper);
-}
-
-.colour-card.left {
-  left: 56px;
-}
-
-.colour-card.right {
-  right: 56px;
-}
-
-.colour-card.top {
-  top: 24px;
-}
-
-.colour-card.bottom {
-  bottom: 24px;
 }
 
 .colour-big {
@@ -541,7 +524,7 @@ ul {
 
 .colour-members {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 6px;
 }
 
@@ -563,6 +546,25 @@ ul {
   outline: 2px solid var(--ink);
 }
 
+.colour-open {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px 16px;
+  font-family: var(--mono);
+  font-size: 12px;
+}
+
+.colour-open button {
+  min-height: 44px;
+}
+
+.colour-caption {
+  grid-column: 1 / -1;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .colour-hit {
     transition: none;
@@ -570,20 +572,29 @@ ul {
 }
 
 @media (max-width: 760px) {
+  .all-photos {
+    padding-top: 8px;
+  }
+
+  .colour {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
   .colour-chart {
     height: auto;
     min-height: 0;
     aspect-ratio: 1;
   }
 
-  .colour-card {
-    position: static;
-    width: 100%;
+  .colour-panel {
+    height: auto;
+    min-height: 0;
     max-height: none;
-    margin-top: 16px;
+    overflow: visible;
   }
 
-  .colour-members {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+  .colour-caption {
+    grid-column: auto;
   }
 }

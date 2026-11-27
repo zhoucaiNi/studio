@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { expect, test, vi } from 'vitest'
 import { fixture } from '../test/fixture.ts'
@@ -51,4 +51,14 @@ test('picking a photo inside a group changes which one open photo goes to', asyn
   await userEvent.click(screen.getByRole('button', { name: 'Alpha 02' }))
   await userEvent.click(screen.getByRole('button', { name: 'open photo' }))
   expect(onOpen).toHaveBeenCalledWith(0, 1)
+})
+
+test('the photos always show in the same panel, whichever group you pick', async () => {
+  setup()
+  const panel = screen.getByRole('complementary', { name: 'Photos in this colour' })
+  expect(within(panel).getByRole('button', { name: 'Alpha 01' })).toBeInTheDocument()
+  await userEvent.click(screen.getByRole('button', { name: '1 photo, #2f5fa8' }))
+  expect(screen.getByRole('complementary', { name: 'Photos in this colour' })).toBe(panel)
+  expect(within(panel).getByRole('button', { name: 'Beta & Co 01' })).toBeInTheDocument()
+  expect(panel.className).not.toMatch(/left|right|top|bottom/)
 })

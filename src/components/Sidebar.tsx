@@ -32,13 +32,14 @@ export function Sidebar({ collections, current, colour, onPick, onColour }: Prop
               </button>
             </li>
           ))}
-          <li>
-            <button type="button" className="collection" aria-current={colour ? 'true' : undefined} onClick={onColour}>
-              <span>Colour</span>
-              <span className="count">{pad(collections.reduce((n, col) => n + col.photos.length, 0))}</span>
-            </button>
-          </li>
         </ul>
+      </nav>
+      <nav aria-label="All photos" className="all-photos">
+        <p className="label">All photos</p>
+        <button type="button" className="collection" aria-current={colour ? 'true' : undefined} onClick={onColour}>
+          <span>Colour</span>
+          <span className="count">{pad(collections.reduce((n, col) => n + col.photos.length, 0))}</span>
+        </button>
       </nav>
       <nav aria-label="Site" className="site-links">
         <a href={INSTAGRAM_URL}>Instagram</a>
