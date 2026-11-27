@@ -6,6 +6,7 @@ import { extname, join, resolve } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import sharp from 'sharp'
 import type { Collection, Photo } from '../src/types.ts'
+import { dominantHex } from './dominant-colour.ts'
 
 const FORBIDDEN = 'Helen Edits'
 const PHOTO_TYPES = new Set(['.jpg', '.jpeg', '.png'])
@@ -82,7 +83,8 @@ export async function exportPhotos(opts: { sourceDir: string; publicDir: string;
       const src = join(p.dir, file)
       const large = await resized(src, LARGE).toFile(join(photosDir, p.slug, `${nn}-large.jpg`))
       const full = await resized(src, FULL).toFile(join(photosDir, p.slug, `${nn}-full.jpg`))
-      await resized(src, THUMB).toFile(join(photosDir, p.slug, `${nn}-thumb.jpg`))
+      const thumbPath = join(photosDir, p.slug, `${nn}-thumb.jpg`)
+      await resized(src, THUMB).toFile(thumbPath)
       photos.push({
         large: `/photos/${p.slug}/${nn}-large.jpg`,
         largeWidth: large.width,
@@ -92,6 +94,7 @@ export async function exportPhotos(opts: { sourceDir: string; publicDir: string;
         height: full.height,
         alt: p.info[file]?.alt ?? `${p.name}, photo ${k + 1}`,
         caption: p.info[file]?.caption ?? '',
+        color: await dominantHex(thumbPath),
       })
     }
     collections.push({ slug: p.slug, name: p.name, photos })

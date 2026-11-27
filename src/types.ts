@@ -7,6 +7,7 @@ export type Photo = {
   height: number
   alt: string
   caption: string
+  color: string // dominant colour as #rrggbb, for the Colour page
 }
 
 export type Collection = {

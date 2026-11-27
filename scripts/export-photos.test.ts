@@ -151,3 +151,13 @@ test('slugs keep only letters, numbers and hyphens', async () => {
   expect(c.name).toBe('Dusk & Water #2')
   expect(c.photos[0].full).toBe('/photos/dusk-water-2/01-full.jpg')
 })
+
+test('records each photo’s dominant colour as a hex', async () => {
+  await jpeg(join(src, '01-Dusk', 'a.jpg')) // solid green
+  const [dusk] = await run()
+  const color = dusk.photos[0].color
+  expect(color).toMatch(/^#[0-9a-f]{6}$/)
+  const [r, g, b] = [1, 3, 5].map((o) => parseInt(color.slice(o, o + 2), 16))
+  expect(g).toBeGreaterThan(r)
+  expect(g).toBeGreaterThan(b)
+})
