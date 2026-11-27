@@ -544,6 +544,11 @@ ul {
 
 .colour-member[aria-current='true'] {
   outline: 2px solid var(--ink);
+  outline-offset: -2px; /* inside the thumbnail, so the panel's scroll edge doesn't clip it */
+}
+
+.colour-panel :focus-visible {
+  outline-offset: -3px;
 }
 
 .colour-open {
