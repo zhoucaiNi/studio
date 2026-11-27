@@ -292,5 +292,67 @@
         "color": "#404040"
       }
     ]
+  },
+  {
+    "slug": "colour-extras",
+    "name": "Colour",
+    "hidden": true,
+    "photos": [
+      {
+        "large": "/photos/colour-extras/01-large.jpg",
+        "largeWidth": 3200,
+        "full": "/photos/colour-extras/01-full.jpg",
+        "thumb": "/photos/colour-extras/01-thumb.jpg",
+        "width": 2000,
+        "height": 1124,
+        "alt": "Close-up of purple wisteria blossoms",
+        "caption": "",
+        "color": "#463992"
+      },
+      {
+        "large": "/photos/colour-extras/02-large.jpg",
+        "largeWidth": 3200,
+        "full": "/photos/colour-extras/02-full.jpg",
+        "thumb": "/photos/colour-extras/02-thumb.jpg",
+        "width": 2000,
+        "height": 1124,
+        "alt": "Brown boots and jeans resting in tall green grass",
+        "caption": "",
+        "color": "#5d6a29"
+      },
+      {
+        "large": "/photos/colour-extras/03-large.jpg",
+        "largeWidth": 3200,
+        "full": "/photos/colour-extras/03-full.jpg",
+        "thumb": "/photos/colour-extras/03-thumb.jpg",
+        "width": 2000,
+        "height": 1126,
+        "alt": "A small pine topiary against a wall of ivy",
+        "caption": "",
+        "color": "#234424"
+      },
+      {
+        "large": "/photos/colour-extras/04-large.jpg",
+        "largeWidth": 3200,
+        "full": "/photos/colour-extras/04-full.jpg",
+        "thumb": "/photos/colour-extras/04-thumb.jpg",
+        "width": 2000,
+        "height": 1124,
+        "alt": "A rippled blue lake at dusk framed by dark leaves",
+        "caption": "",
+        "color": "#4e578f"
+      },
+      {
+        "large": "/photos/colour-extras/05-large.jpg",
+        "largeWidth": 3200,
+        "full": "/photos/colour-extras/05-full.jpg",
+        "thumb": "/photos/colour-extras/05-thumb.jpg",
+        "width": 2000,
+        "height": 1124,
+        "alt": "Two bronze feet hanging on cords above a floor of projected shadows, in sepia",
+        "caption": "",
+        "color": "#795b47"
+      }
+    ]
   }
 ]
