@@ -12,14 +12,16 @@ const linear = (c: number) => {
   return v <= 0.04045 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4)
 }
 
-export function labFromHex(hex: string): Lab {
-  const [r, g, b] = rgbOf(hex).map(linear)
+export function labFromRgb(red: number, green: number, blue: number): Lab {
+  const [r, g, b] = [red, green, blue].map(linear)
   const x = (0.4124 * r + 0.3576 * g + 0.1805 * b) / 0.95047
   const y = 0.2126 * r + 0.7152 * g + 0.0722 * b
   const z = (0.0193 * r + 0.1192 * g + 0.9505 * b) / 1.08883
   const f = (t: number) => (t > 0.008856 ? Math.cbrt(t) : 7.787 * t + 16 / 116)
   return { l: 116 * f(y) - 16, a: 500 * (f(x) - f(y)), b: 200 * (f(y) - f(z)) }
 }
+
+export const labFromHex = (hex: string): Lab => labFromRgb(...(rgbOf(hex) as [number, number, number]))
 
 export function averageHex(hexes: string[]): string {
   const sum = hexes.map(rgbOf).reduce((t, c) => t.map((v, k) => v + c[k]), [0, 0, 0])
@@ -30,7 +32,7 @@ export function averageHex(hexes: string[]): string {
 const distance = (x: Lab, y: Lab) => Math.hypot(x.a - y.a, x.b - y.b, (x.l - y.l) * 0.5)
 
 // Merge the two closest groups until none are within `threshold`; biggest group first.
-export function groupByColour<T extends { hex: string }>(items: T[], threshold = 26): Group<T>[] {
+export function groupByColour<T extends { hex: string }>(items: T[], threshold = 16): Group<T>[] {
   const groups = items.map((item) => ({ ...labFromHex(item.hex), items: [item], hex: item.hex }))
   for (;;) {
     let best = { i: -1, j: -1, d: Infinity }

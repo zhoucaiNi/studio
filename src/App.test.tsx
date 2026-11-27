@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event'
 import { beforeEach, expect, test } from 'vitest'
 import App from './App.tsx'
 import { fixture } from './test/fixture.ts'
+import type { Collection } from './types.ts'
 
 beforeEach(() => {
   history.replaceState(null, '', '/')
@@ -102,4 +103,42 @@ test('Colour is its own group in the sidebar, not one of the collections', () =>
   expect(within(collections).queryByRole('button', { name: /^Colour/ })).not.toBeInTheDocument()
   const everything = screen.getByRole('navigation', { name: 'All photos' })
   expect(within(everything).getByRole('button', { name: /^Colour/ })).toHaveTextContent('04')
+})
+
+// two photos that live only on the Colour page: no sidebar entry, but they count and can be opened
+const colourOnly: Collection = {
+  slug: 'extras',
+  name: 'Extras',
+  hidden: true,
+  photos: [
+    { ...fixture[0].photos[0], thumb: '/photos/extras/01-thumb.jpg', full: '/photos/extras/01-full.jpg', alt: 'extras photo 1', color: '#d4a017' },
+    { ...fixture[0].photos[0], thumb: '/photos/extras/02-thumb.jpg', full: '/photos/extras/02-full.jpg', alt: 'extras photo 2', color: '#2e8b57' },
+  ],
+}
+
+test('colour-only photos are not collections in the sidebar, but they count toward Colour', () => {
+  render(<App collections={[...fixture, colourOnly]} />)
+  const collections = screen.getByRole('navigation', { name: 'Collections' })
+  expect(within(collections).queryByRole('button', { name: /Extras/ })).not.toBeInTheDocument()
+  expect(within(collections).getAllByRole('button')).toHaveLength(2)
+  expect(screen.getByRole('button', { name: /^Colour/ })).toHaveTextContent('06')
+})
+
+test('a colour-only photo opens in the wide viewer, with Colour still marked as the current page', async () => {
+  render(<App collections={[...fixture, colourOnly]} />)
+  await userEvent.click(screen.getByRole('button', { name: /^Colour/ }))
+  expect(screen.getByText('Colour · 6 photos in 5 groups')).toBeInTheDocument()
+  await userEvent.click(screen.getByRole('button', { name: '1 photo, #d4a017' }))
+  await userEvent.click(screen.getByRole('button', { name: 'open photo' }))
+  expect(counter()).toBe('01 / 02')
+  expect(location.hash).toBe('#/extras/1')
+  expect(screen.getByRole('img', { name: 'extras photo 1' })).toBeInTheDocument()
+  expect(screen.getByRole('button', { name: /^Colour/ })).toHaveAttribute('aria-current', 'true')
+  expect(screen.getByRole('button', { name: /^Alpha\d/ })).not.toHaveAttribute('aria-current')
+})
+
+test('a #/extras/2 link opens that colour-only photo', () => {
+  history.replaceState(null, '', '/#/extras/2')
+  render(<App collections={[...fixture, colourOnly]} />)
+  expect(counter()).toBe('02 / 02')
 })

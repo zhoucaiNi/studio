@@ -62,3 +62,11 @@ test('the photos always show in the same panel, whichever group you pick', async
   expect(within(panel).getByRole('button', { name: 'Beta & Co 01' })).toBeInTheDocument()
   expect(panel.className).not.toMatch(/left|right|top|bottom/)
 })
+
+test('draws the wheel behind the squares: two rings, two diagonals and the axes named in a*/b* terms', () => {
+  const { container } = render(<ColourChart collections={fixture} onOpen={vi.fn()} />)
+  expect(container.querySelectorAll('.colour-ring')).toHaveLength(2)
+  expect(container.querySelectorAll('.colour-diagonal')).toHaveLength(2)
+  expect(container.querySelectorAll('.colour-dotted')).toHaveLength(2)
+  for (const label of ['yellow +b*', 'blue −b*', 'green −a*', 'red +a*']) expect(screen.getByText(label)).toBeInTheDocument()
+})

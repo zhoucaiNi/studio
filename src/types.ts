@@ -14,4 +14,5 @@ export type Collection = {
   slug: string
   name: string
   photos: Photo[]
+  hidden?: boolean // colour-only photos: on the Colour page, but not a collection in the sidebar
 }

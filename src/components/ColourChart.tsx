@@ -33,10 +33,16 @@ export function ColourChart({ collections, onOpen }: Props) {
     return () => observer.disconnect()
   }, [])
   const square = size.w < 560 ? 28 : 44
-  const spots = useMemo(
-    () => placeGroups(groups, { width: size.w, height: size.h, gap: square + 14 }),
-    [groups, size, square],
-  )
+  // the wheel is a true circle, so the squares are placed in a centred square; the dotted axes still run the full width
+  const side = Math.min(size.w, size.h)
+  const spots = useMemo(() => {
+    const placed = placeGroups(groups, { width: side, height: side, gap: square + 14 })
+    return placed.map((s) => ({ x: s.x + (size.w - side) / 2, y: s.y + (size.h - side) / 2 }))
+  }, [groups, side, size, square])
+  const cx = size.w / 2
+  const cy = size.h / 2
+  const half = side / 2 - square * 0.75
+  const reach = (side / 2) * 0.92
 
   const [picked, setPicked] = useState(0)
   const [shown, setShown] = useState(0)
@@ -52,12 +58,19 @@ export function ColourChart({ collections, onOpen }: Props) {
   return (
     <div className="colour">
       <div ref={chartRef} className="colour-chart" style={{ ['--sq' as string]: `${square}px` }}>
-        <span className="colour-axis colour-axis-x" aria-hidden="true" />
-        <span className="colour-axis colour-axis-y" aria-hidden="true" />
-        <span className="label colour-end colour-yellow" aria-hidden="true">yellow</span>
-        <span className="label colour-end colour-blue" aria-hidden="true">blue</span>
-        <span className="label colour-end colour-green" aria-hidden="true">green</span>
-        <span className="label colour-end colour-red" aria-hidden="true">red</span>
+        <svg className="colour-backdrop" width={size.w} height={size.h} aria-hidden="true">
+          <circle className="colour-ring colour-ring-outer" cx={cx} cy={cy} r={half * 0.78} />
+          <circle className="colour-ring colour-ring-inner" cx={cx} cy={cy} r={half * 0.45} />
+          <line className="colour-diagonal" x1={cx - reach} y1={cy - reach} x2={cx + reach} y2={cy + reach} />
+          <line className="colour-diagonal" x1={cx - reach} y1={cy + reach} x2={cx + reach} y2={cy - reach} />
+          <line className="colour-dotted" x1={0} y1={cy} x2={size.w} y2={cy} />
+          <line className="colour-dotted" x1={cx} y1={0} x2={cx} y2={size.h} />
+          <circle className="colour-centre" cx={cx} cy={cy} r={2.5} />
+          <text className="colour-label colour-yellow" x={cx + 8} y={14}>yellow +b*</text>
+          <text className="colour-label colour-blue" x={cx + 8} y={size.h - 6}>blue −b*</text>
+          <text className="colour-label colour-green" x={0} y={cy - 8}>green −a*</text>
+          <text className="colour-label colour-red" x={size.w} y={cy - 8} textAnchor="end">red +a*</text>
+        </svg>
         {groups.map((g, k) => (
           <button
             key={g.hex + k}
