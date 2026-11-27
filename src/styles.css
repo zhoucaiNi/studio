@@ -398,55 +398,56 @@ ul {
   max-height: 960px;
 }
 
-.colour-axis {
+/* the wheel behind the squares: two rings, two diagonals, dotted axes and the a*/b* labels */
+.colour-backdrop {
   position: absolute;
-  border: 0 dotted var(--rule);
+  inset: 0;
+  pointer-events: none;
 }
 
-.colour-axis-x {
-  left: 0;
-  right: 0;
-  top: 50%;
-  border-top-width: 1px;
+.colour-ring-outer {
+  fill: var(--cell);
 }
 
-.colour-axis-y {
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  border-left-width: 1px;
+.colour-ring-inner {
+  fill: var(--paper);
+  opacity: 0.55;
 }
 
-.colour-end {
-  position: absolute;
+.colour-diagonal {
+  stroke: var(--muted);
+  stroke-width: 0.7;
+  opacity: 0.35;
 }
 
-.colour-yellow,
-.colour-blue {
-  left: 50%;
-  transform: translateX(-50%);
+.colour-dotted {
+  stroke: var(--muted);
+  stroke-width: 1;
+  stroke-dasharray: 1 3;
+}
+
+.colour-centre {
+  fill: var(--ink);
+}
+
+.colour-label {
+  font: 12px var(--mono);
 }
 
 .colour-yellow {
-  top: 0;
+  fill: #a88600;
 }
 
 .colour-blue {
-  bottom: 0;
-}
-
-.colour-green,
-.colour-red {
-  top: 50%;
-  transform: translateY(-150%);
+  fill: #2f63b8;
 }
 
 .colour-green {
-  left: 0;
+  fill: #2c7f5a;
 }
 
 .colour-red {
-  right: 0;
+  fill: #c0392b;
 }
 
 /* the button is a 44px touch target; the square inside is smaller on phones */
