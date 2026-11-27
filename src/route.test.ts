@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest'
-import { formatHash, parseHash } from './route.ts'
+import { COLOUR_HASH, formatHash, isColourHash, parseHash } from './route.ts'
 import { fixture } from './test/fixture.ts'
 
 describe('parseHash', () => {
@@ -38,4 +38,18 @@ test('formatHash builds a 1-based hash', () => {
 test('reads percent-encoded slugs', () => {
   const cols = [{ ...fixture[0], slug: 'café' }]
   expect(parseHash('#/caf%C3%A9/2', cols)).toEqual({ c: 0, i: 1 })
+})
+
+describe('isColourHash', () => {
+  test('is true only for the colour page', () => {
+    expect(COLOUR_HASH).toBe('#/colour')
+    expect(isColourHash('#/colour')).toBe(true)
+    expect(isColourHash('#/Colour/')).toBe(true)
+    expect(isColourHash('#/a/1')).toBe(false)
+    expect(isColourHash('')).toBe(false)
+  })
+
+  test('a collection slug is never mistaken for it', () => {
+    expect(parseHash('#/colour', fixture)).toEqual({ c: 0, i: 0 })
+  })
 })

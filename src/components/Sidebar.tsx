@@ -2,9 +2,15 @@ import { INSTAGRAM_URL, MAIN_SITE_URL } from '../config.ts'
 import { pad } from '../pad.ts'
 import type { Collection } from '../types.ts'
 
-type Props = { collections: Collection[]; current: number; onPick: (c: number) => void }
+type Props = {
+  collections: Collection[]
+  current: number
+  colour: boolean
+  onPick: (c: number) => void
+  onColour: () => void
+}
 
-export function Sidebar({ collections, current, onPick }: Props) {
+export function Sidebar({ collections, current, colour, onPick, onColour }: Props) {
   return (
     <aside className="sidebar">
       <a className="name" href={MAIN_SITE_URL}>
@@ -18,7 +24,7 @@ export function Sidebar({ collections, current, onPick }: Props) {
               <button
                 type="button"
                 className="collection"
-                aria-current={k === current ? 'true' : undefined}
+                aria-current={k === current && !colour ? 'true' : undefined}
                 onClick={() => onPick(k)}
               >
                 <span>{col.name}</span>
@@ -27,6 +33,13 @@ export function Sidebar({ collections, current, onPick }: Props) {
             </li>
           ))}
         </ul>
+      </nav>
+      <nav aria-label="All photos" className="all-photos">
+        <p className="label">All photos</p>
+        <button type="button" className="collection" aria-current={colour ? 'true' : undefined} onClick={onColour}>
+          <span>Colour</span>
+          <span className="count">{pad(collections.reduce((n, col) => n + col.photos.length, 0))}</span>
+        </button>
       </nav>
       <nav aria-label="Site" className="site-links">
         <a href={INSTAGRAM_URL}>Instagram</a>

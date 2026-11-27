@@ -101,3 +101,42 @@ test('a hand-edited hash that needs fixing is replaced, not added to history', (
   expect(location.hash).toBe('#/b/1')
   expect(history.length).toBe(before + 1)
 })
+
+test('starts on the colour page from #/colour', () => {
+  const { result } = start('#/colour')
+  expect(result.current.colour).toBe(true)
+})
+
+test('openColour shows the colour page and sets the hash; going on a photo leaves it', () => {
+  const { result } = start('#/a/2')
+  expect(result.current.colour).toBe(false)
+  act(() => result.current.openColour())
+  expect(result.current.colour).toBe(true)
+  expect(location.hash).toBe('#/colour')
+  act(() => result.current.openPhoto(1, 0))
+  expect(result.current).toMatchObject({ colour: false, c: 1, i: 0 })
+  expect(location.hash).toBe('#/b/1')
+})
+
+test('picking a collection leaves the colour page', () => {
+  const { result } = start('#/colour')
+  act(() => result.current.pickCollection(0))
+  expect(result.current).toMatchObject({ colour: false, c: 0, i: 0 })
+})
+
+test('arrow keys do nothing on the colour page', () => {
+  const { result } = start('#/a/1')
+  act(() => result.current.openColour())
+  act(() => void fireEvent.keyDown(window, { key: 'ArrowRight' }))
+  expect(result.current.i).toBe(0)
+})
+
+test('back from the colour page returns to the photo you were on', () => {
+  const { result } = start('#/a/2')
+  act(() => result.current.openColour())
+  act(() => {
+    history.replaceState(null, '', '/#/a/2')
+    window.dispatchEvent(new PopStateEvent('popstate'))
+  })
+  expect(result.current).toMatchObject({ colour: false, c: 0, i: 1 })
+})
