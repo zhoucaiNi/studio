@@ -32,7 +32,7 @@ export function averageHex(hexes: string[]): string {
 const distance = (x: Lab, y: Lab) => Math.hypot(x.a - y.a, x.b - y.b, (x.l - y.l) * 0.5)
 
 // Merge the two closest groups until none are within `threshold`; biggest group first.
-export function groupByColour<T extends { hex: string }>(items: T[], threshold = 26): Group<T>[] {
+export function groupByColour<T extends { hex: string }>(items: T[], threshold = 16): Group<T>[] {
   const groups = items.map((item) => ({ ...labFromHex(item.hex), items: [item], hex: item.hex }))
   for (;;) {
     let best = { i: -1, j: -1, d: Infinity }

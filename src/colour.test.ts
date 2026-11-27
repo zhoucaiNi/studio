@@ -62,3 +62,13 @@ test('placeGroups puts red to the right and blue below', () => {
   expect(redSpot.x).toBeGreaterThan(centre.x)
   expect(blueSpot.y).toBeGreaterThan(centre.y)
 })
+
+test('a sky blue, denim, a deep navy and a purple are four different groups, not one blue pile', () => {
+  const groups = groupByColour(['#6dafd1', '#46566d', '#012c6c', '#8578b4'].map((hex) => ({ hex })))
+  expect(groups).toHaveLength(4)
+})
+
+test('shades of the same colour still share a group', () => {
+  const groups = groupByColour(['#6dafd1', '#729cd4', '#6e8dab'].map((hex) => ({ hex })))
+  expect(groups).toHaveLength(1)
+})
