@@ -255,14 +255,14 @@
     ]
   },
   {
-    "slug": "fall",
-    "name": "Fall",
+    "slug": "vienna-negative",
+    "name": "Vienna Negative",
     "photos": [
       {
-        "large": "/photos/fall/01-large.jpg",
+        "large": "/photos/vienna-negative/01-large.jpg",
         "largeWidth": 3200,
-        "full": "/photos/fall/01-full.jpg",
-        "thumb": "/photos/fall/01-thumb.jpg",
+        "full": "/photos/vienna-negative/01-full.jpg",
+        "thumb": "/photos/vienna-negative/01-thumb.jpg",
         "width": 2000,
         "height": 1124,
         "alt": "Spire of a Gothic cathedral, lit white against a black sky",
@@ -270,10 +270,10 @@
         "color": "#010101"
       },
       {
-        "large": "/photos/fall/02-large.jpg",
+        "large": "/photos/vienna-negative/02-large.jpg",
         "largeWidth": 3200,
-        "full": "/photos/fall/02-full.jpg",
-        "thumb": "/photos/fall/02-thumb.jpg",
+        "full": "/photos/vienna-negative/02-full.jpg",
+        "thumb": "/photos/vienna-negative/02-thumb.jpg",
         "width": 2000,
         "height": 1124,
         "alt": "A Gothic cathedral and its tall spire seen from below, in black and white",
@@ -281,10 +281,10 @@
         "color": "#020202"
       },
       {
-        "large": "/photos/fall/03-large.jpg",
+        "large": "/photos/vienna-negative/03-large.jpg",
         "largeWidth": 3200,
-        "full": "/photos/fall/03-full.jpg",
-        "thumb": "/photos/fall/03-thumb.jpg",
+        "full": "/photos/vienna-negative/03-full.jpg",
+        "thumb": "/photos/vienna-negative/03-thumb.jpg",
         "width": 2000,
         "height": 1124,
         "alt": "Tower and zigzag-tiled roof of a Gothic cathedral, in black and white",
