@@ -83,41 +83,74 @@
     ]
   },
   {
-    "slug": "dusk",
-    "name": "Dusk",
+    "slug": "t-max-400-bw",
+    "name": "T-Max 400 BW",
     "photos": [
       {
-        "large": "/photos/dusk/01-large.jpg",
-        "largeWidth": 3200,
-        "full": "/photos/dusk/01-full.jpg",
-        "thumb": "/photos/dusk/01-thumb.jpg",
+        "large": "/photos/t-max-400-bw/01-large.jpg",
+        "largeWidth": 2048,
+        "full": "/photos/t-max-400-bw/01-full.jpg",
+        "thumb": "/photos/t-max-400-bw/01-thumb.jpg",
         "width": 2000,
-        "height": 1126,
-        "alt": "Purple and pink clouds over a still lake",
-        "caption": "2024",
-        "color": "#8578b4"
+        "height": 1437,
+        "alt": "A weathered, eroded cliff face against a pale sky",
+        "caption": "",
+        "color": "#acacac"
       },
       {
-        "large": "/photos/dusk/02-large.jpg",
-        "largeWidth": 3200,
-        "full": "/photos/dusk/02-full.jpg",
-        "thumb": "/photos/dusk/02-thumb.jpg",
+        "large": "/photos/t-max-400-bw/02-large.jpg",
+        "largeWidth": 2048,
+        "full": "/photos/t-max-400-bw/02-full.jpg",
+        "thumb": "/photos/t-max-400-bw/02-thumb.jpg",
         "width": 2000,
-        "height": 1126,
-        "alt": "An orange sunset over a flat ocean horizon",
-        "caption": "2024",
-        "color": "#f2e0b9"
+        "height": 1461,
+        "alt": "A cut tree stump with a hollow centre on a bed of wood chips",
+        "caption": "",
+        "color": "#464646"
       },
       {
-        "large": "/photos/dusk/03-large.jpg",
-        "largeWidth": 3200,
-        "full": "/photos/dusk/03-full.jpg",
-        "thumb": "/photos/dusk/03-thumb.jpg",
+        "large": "/photos/t-max-400-bw/03-large.jpg",
+        "largeWidth": 2048,
+        "full": "/photos/t-max-400-bw/03-full.jpg",
+        "thumb": "/photos/t-max-400-bw/03-thumb.jpg",
         "width": 2000,
-        "height": 1126,
-        "alt": "The sun setting, framed by a dark window",
-        "caption": "2024",
-        "color": "#cb7f4c"
+        "height": 1486,
+        "alt": "Two crows perched on the roof of a small hut above a foggy sea",
+        "caption": "",
+        "color": "#737373"
+      },
+      {
+        "large": "/photos/t-max-400-bw/04-large.jpg",
+        "largeWidth": 2048,
+        "full": "/photos/t-max-400-bw/04-full.jpg",
+        "thumb": "/photos/t-max-400-bw/04-thumb.jpg",
+        "width": 2000,
+        "height": 1455,
+        "alt": "The railed lantern room of a lighthouse seen from below against a white sky",
+        "caption": "",
+        "color": "#d2d2d2"
+      },
+      {
+        "large": "/photos/t-max-400-bw/05-large.jpg",
+        "largeWidth": 2048,
+        "full": "/photos/t-max-400-bw/05-full.jpg",
+        "thumb": "/photos/t-max-400-bw/05-thumb.jpg",
+        "width": 2000,
+        "height": 1461,
+        "alt": "A weathered shingled roof and railings above breaking waves",
+        "caption": "",
+        "color": "#707070"
+      },
+      {
+        "large": "/photos/t-max-400-bw/06-large.jpg",
+        "largeWidth": 2048,
+        "full": "/photos/t-max-400-bw/06-full.jpg",
+        "thumb": "/photos/t-max-400-bw/06-thumb.jpg",
+        "width": 2000,
+        "height": 1429,
+        "alt": "Snow-laden pine trees beside a dark wooden building",
+        "caption": "",
+        "color": "#7c7c7c"
       }
     ]
   },
