@@ -398,7 +398,7 @@ ul {
   max-height: 960px;
 }
 
-/* the wheel behind the squares: two rings, two diagonals, dotted axes and the a*/b* labels */
+/* the wheel behind the squares: two rings, two diagonals, dotted axes and the axis labels */
 .colour-backdrop {
   position: absolute;
   inset: 0;
