@@ -265,9 +265,9 @@
         "thumb": "/photos/fall/01-thumb.jpg",
         "width": 2000,
         "height": 1124,
-        "alt": "Red leaves around a dark tree trunk",
-        "caption": "Fall",
-        "color": "#0b0a0a"
+        "alt": "Spire of a Gothic cathedral, lit white against a black sky",
+        "caption": "",
+        "color": "#010101"
       },
       {
         "large": "/photos/fall/02-large.jpg",
@@ -276,9 +276,9 @@
         "thumb": "/photos/fall/02-thumb.jpg",
         "width": 2000,
         "height": 1124,
-        "alt": "Bright red autumn leaves over a lawn",
-        "caption": "Fall",
-        "color": "#902f4d"
+        "alt": "A Gothic cathedral and its tall spire seen from below, in black and white",
+        "caption": "",
+        "color": "#020202"
       },
       {
         "large": "/photos/fall/03-large.jpg",
@@ -287,31 +287,9 @@
         "thumb": "/photos/fall/03-thumb.jpg",
         "width": 2000,
         "height": 1124,
-        "alt": "A person crouched among bright red leaves",
-        "caption": "Fall",
-        "color": "#8e302b"
-      },
-      {
-        "large": "/photos/fall/04-large.jpg",
-        "largeWidth": 3200,
-        "full": "/photos/fall/04-full.jpg",
-        "thumb": "/photos/fall/04-thumb.jpg",
-        "width": 2000,
-        "height": 1124,
-        "alt": "Two pumpkins on brownstone steps",
-        "caption": "Boston",
-        "color": "#110e0e"
-      },
-      {
-        "large": "/photos/fall/05-large.jpg",
-        "largeWidth": 3200,
-        "full": "/photos/fall/05-full.jpg",
-        "thumb": "/photos/fall/05-thumb.jpg",
-        "width": 2000,
-        "height": 1124,
-        "alt": "A pumpkin in a bright blue window box",
-        "caption": "Boston",
-        "color": "#02136e"
+        "alt": "Tower and zigzag-tiled roof of a Gothic cathedral, in black and white",
+        "caption": "",
+        "color": "#020202"
       }
     ]
   }
