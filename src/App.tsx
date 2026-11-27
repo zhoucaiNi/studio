@@ -1,3 +1,4 @@
+import { ColourChart } from './components/ColourChart.tsx'
 import { Controls } from './components/Controls.tsx'
 import { PrintRequest } from './components/PrintRequest.tsx'
 import { Sidebar } from './components/Sidebar.tsx'
@@ -13,24 +14,30 @@ export default function App({ collections = data as Collection[] }: { collection
   const g = useGallery(collections)
   return (
     <div className="layout">
-      <Sidebar collections={collections} current={g.c} onPick={g.pickCollection} />
+      <Sidebar collections={collections} current={g.c} colour={g.colour} onPick={g.pickCollection} onColour={g.openColour} />
       <main className="main">
-        <Viewer collection={g.collection} photo={g.photo} gridOpen={g.gridOpen} onNext={g.next} onOpen={g.goTo} />
-        <Controls
-          collectionName={g.collection.name}
-          caption={g.photo.caption}
-          index={g.i}
-          total={g.collection.photos.length}
-          gridOpen={g.gridOpen}
-          onPrev={g.prev}
-          onNext={g.next}
-          onToggleGrid={g.toggleGrid}
-        />
-        <PrintRequest
-          collectionName={g.collection.name}
-          photoNumber={g.i + 1}
-          photoUrl={SITE_URL + '/' + formatHash(collections, g.c, g.i)}
-        />
+        {g.colour ? (
+          <ColourChart collections={collections} onOpen={g.openPhoto} />
+        ) : (
+          <>
+            <Viewer collection={g.collection} photo={g.photo} gridOpen={g.gridOpen} onNext={g.next} onOpen={g.goTo} />
+            <Controls
+              collectionName={g.collection.name}
+              caption={g.photo.caption}
+              index={g.i}
+              total={g.collection.photos.length}
+              gridOpen={g.gridOpen}
+              onPrev={g.prev}
+              onNext={g.next}
+              onToggleGrid={g.toggleGrid}
+            />
+            <PrintRequest
+              collectionName={g.collection.name}
+              photoNumber={g.i + 1}
+              photoUrl={SITE_URL + '/' + formatHash(collections, g.c, g.i)}
+            />
+          </>
+        )}
         <footer id="info" className="footer">
           <span>San Francisco</span>
           <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>

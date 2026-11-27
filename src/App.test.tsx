@@ -68,3 +68,30 @@ test('the photo button names the photo for screen readers', () => {
   render(<App collections={fixture} />)
   expect(screen.getByRole('button', { name: 'a photo 1. Next photo' })).toBeInTheDocument()
 })
+
+test('Colour in the sidebar opens the colour chart and is the current page', async () => {
+  render(<App collections={fixture} />)
+  expect(screen.getByRole('button', { name: /^Colour/ })).toHaveTextContent('04')
+  await userEvent.click(screen.getByRole('button', { name: /^Colour/ }))
+  expect(screen.getByText('Colour · 4 photos in 3 groups')).toBeInTheDocument()
+  expect(screen.getByRole('button', { name: /^Colour/ })).toHaveAttribute('aria-current', 'true')
+  expect(screen.getByRole('button', { name: /^Alpha\d/ })).not.toHaveAttribute('aria-current')
+  expect(screen.queryByTestId('counter')).not.toBeInTheDocument()
+  expect(location.hash).toBe('#/colour')
+})
+
+test('opening a photo from the chart returns to the viewer on that photo', async () => {
+  render(<App collections={fixture} />)
+  await userEvent.click(screen.getByRole('button', { name: /^Colour/ }))
+  await userEvent.click(screen.getByRole('button', { name: '1 photo, #c4452f' }))
+  await userEvent.click(screen.getByRole('button', { name: 'open photo' }))
+  expect(counter()).toBe('03 / 03')
+  expect(location.hash).toBe('#/a/3')
+  expect(screen.getByRole('button', { name: /^Colour/ })).not.toHaveAttribute('aria-current')
+})
+
+test('a #/colour link opens the chart', () => {
+  history.replaceState(null, '', '/#/colour')
+  render(<App collections={fixture} />)
+  expect(screen.getByText('Colour · 4 photos in 3 groups')).toBeInTheDocument()
+})
